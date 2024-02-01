@@ -11,7 +11,7 @@ Here's how it works:
 **Options:** You can also provide some options to the Intersection Observer, like setting a threshold. The threshold is a percentage of the observed element's visibility needed to trigger the callback. For example, you could use a threshold of 0.5 to be notified when an element is 50% visible, or  a threshold of 1 to be notified when an element is fully visible.
 
 
-Here is an example from the More Web path.
+Here is an example of the use of `intersection observer` from the [Animated story](https://projects.raspberrypi.org/en/projects/animated-story) project in the [More Web](https://projects.raspberrypi.org/en/raspberrypi/more-web) path:
 
 --- code ---
 ---
