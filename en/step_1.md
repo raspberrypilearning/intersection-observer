@@ -16,13 +16,12 @@ Here is an example from the More Web path.
 --- code ---
 ---
 language: js
-filename: scripts.js
+filename:
 line_numbers: true
 line_number_start: 1
 line_highlights: 
 ---
 
-// Hide bounce observer
 const bounceObserver = new IntersectionObserver((entries) => {
   if (entries[0].isIntersecting) {
     console.log("BOUNCE TRIGGER IN VIEWPORT");
@@ -32,10 +31,10 @@ bounceObserver.observe(document.getElementById("hideBounce"));
 
 --- /code ---
 
-On line 2, `entries` is a collection of all elements on the web page with the `id="hideBounce"` attribute. 
+On line 1, `entries` is a collection of all elements on the web page with the `id="hideBounce"` attribute (as specified in the observer call on line 6). 
 
 A collection of items is called an 'array'.
 
-The `bounceObserver` is set to observe when the first (in this case: the only) item in the `entries` array comes into the viewport.
+The `bounceObserver` is set to observe when the first (in this case: the only) item in the `entries` array comes into the viewport (using `isIntersecting` on line 2).
 
-When it does, the observer 'callback' outputs a message to the Console.
+When it does, the observer 'callback' outputs a message to the Console (line 3).
