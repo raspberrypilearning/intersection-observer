@@ -1,59 +1,41 @@
-## Introduction
+The Intersection observer is used to detect when an element (e.g. `<img>`, `<p>`, or `<div>`) enters or leaves the user's browser viewport.
 
-Add project description here. What will learners be making? Broadly what skills will they be learning?
+It is commonly used for lazy loading images, and triggering animations.
 
-### What you will make
+Here's how it works:
 
---- no-print ---
-Add instructions for interacting with the embedded content here.
+**Callback:** An observer specifies a callback function. This function is triggered if the observed element enters or exits the viewport.
 
-<div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/160619869/?autostart=false" frameborder="0"></iframe>
-</div>
---- /no-print ---
+**Target elements:** You specify which elements you want the observer to observe. These are the elements you're interested in knowing if they enter of exit the viewport.
 
---- print-only ---
-![Complete project](images/showcase_static.png)
---- /print-only ---
+**Options:** You can also provide some options to the Intersection Observer, like setting a threshold. The threshold is a percentage of the observed element's visibility needed to trigger the callback. For example, you could use a threshold of 0.5 to be notified when an element is 50% visible, or  a threshold of 1 to be notified when an element is fully visible.
 
---- collapse ---
+
+Here is an example from the More Web path.
+
+--- code ---
 ---
-title: What you will need
----
-### Hardware
-
-+ A computer or tablet capable of running Scratch 3
-
-### Software
-
-+ Scratch 3 (either [online](https://scratch.mit.edu/){:target="_blank"} or [offline](https://scratch.mit.edu/download){:target="_blank"})
-+ Python 3
-+ This project can be completed in a web browser using [trinket.io](https://trinket.io/)
-
-### Downloads
-
-+ Download the project [starter file](https://rpf.io/p/en/projectName-go){:target="_blank"} if working offline
-
---- /collapse ---
-
---- collapse ---
----
-title: What you will learn
+language: js
+filename: scripts.js
+line_numbers: true
+line_number_start: 1
+line_highlights: 
 ---
 
-+ Learning objective 1
-+ Learning objective 2
-+ Learning objective 3
+// Hide bounce observer
+const bounceObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) {
+    console.log("BOUNCE TRIGGER IN VIEWPORT");
+  }
+});
+bounceObserver.observe(document.getElementById("hideBounce"));
 
---- /collapse ---
+--- /code ---
 
---- collapse ---
----
-title: Additional information for educators
----
+On line 2, `entries` is a collection of all elements on the web page with the `id="hideBounce"` attribute. 
 
-You can download the completed project [here](https://rpf.io/p/en/projectName-get){:target="_blank"}.
+A collection of items is called an 'array'.
 
-If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/projectName/print){:target="_blank"}.
+The `bounceObserver` is set to observe when the first (in this case: the only) item in the `entries` array comes into the viewport.
 
---- /collapse ---
+When it does, the observer 'callback' outputs a message to the Console.
