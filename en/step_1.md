@@ -1,17 +1,16 @@
-The Intersection observer is used to detect when an element (e.g. `<img>`, `<p>`, or `<div>`) enters or leaves the user's browser viewport.
+The `IntersectionObserver` is used to detect when an element (e.g. `<img>`, `<p>`, or `<div>`) enters or leaves the user's browser viewport.
 
-It is commonly used for lazy loading images, and triggering animations.
+It is commonly used for lazy loading images and triggering animations.
 
-Here's how it works:
+The observer has three main parts:
 
-**Callback:** An observer specifies a callback function. This function is triggered if the observed element enters or exits the viewport.
+**Target elements:** You specify which elements you want the observer to observe. These are the elements you're interested in knowing whether they have entered of exited the viewport.
 
-**Target elements:** You specify which elements you want the observer to observe. These are the elements you're interested in knowing if they enter of exit the viewport.
+**Callback:** The callback is a function that is triggered if the observed element enters or exits the viewport. This could be an output to the Console, or a change to an HTML element, for example.
 
 **Options:** You can also provide some options to the Intersection Observer, like setting a threshold. The threshold is a percentage of the observed element's visibility needed to trigger the callback. For example, you could use a threshold of 0.5 to be notified when an element is 50% visible, or a threshold of 1 to be notified when an element is fully visible.
 
-
-Here is an example of the use of `intersection observer` from the [Animated story](https://projects.raspberrypi.org/en/projects/animated-story) project in the [More Web](https://projects.raspberrypi.org/en/raspberrypi/more-web) path:
+Here is an example of the use of `IntersectionObserver` from the [Animated story](https://projects.raspberrypi.org/en/projects/animated-story) project in the [More Web](https://projects.raspberrypi.org/en/raspberrypi/more-web) path:
 
 --- code ---
 ---
@@ -31,7 +30,7 @@ bounceObserver.observe(document.getElementById("hideBounce"));
 
 --- /code ---
 
-On line 1, `entries` is a collection of all elements on the web page with the `id="hideBounce"` attribute (as specified in the observer call on line 6). 
+On line 1, `entries` is a collection of all elements on the web page with the `id="hideBounce"` attribute. These are the target elements, as specified in the observer call on line 6.
 
 A collection of items is called an 'array'.
 
