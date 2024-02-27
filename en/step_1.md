@@ -26,7 +26,7 @@ const bounceObserver = new IntersectionObserver((entries) => {
     console.log("BOUNCE TRIGGER IN VIEWPORT");
   }
 });
-bounceObserver.observe(document.getElementById("hideBounce"));
+bounceObserver.observe(document.querySelector("#hideBounce"));
 
 --- /code ---
 
