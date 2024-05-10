@@ -1,12 +1,12 @@
 The `IntersectionObserver` is used to detect when an element (e.g. `<img>`, `<p>`, or `<div>`) enters or leaves the user's browser viewport.
 
-It is commonly used for 'lazy loading' images and triggering animations.
+It is commonly used to 'lazy load' images and trigger animations.
 
 The observer has three main parts:
 
 **Target elements:** You specify which elements you want the observer to observe. These are the elements you're interested in knowing whether they have entered of exited the viewport.
 
-**Callback:** The callback is a function that is triggered when the observed element enters or exits the viewport. This could be an output to the Console, or a change to an HTML element, for example.
+**Callback:** The callback is a function that is triggered when the observed element enters or exits the viewport. The function could output a messange to the Console, or change an HTML element, for example.
 
 **Options:** You can also provide some options to the intersection observer, like setting a threshold. The threshold is the amount of the observed element that needs to be visible to trigger the callback. For example, you could use a threshold of 0.5 to be notified when an element is 50% visible, or a threshold of 1 to be notified when an element is fully visible.
 
@@ -34,6 +34,6 @@ On line 1, `entries` is a collection of all elements on the webpage with the `id
 
 A collection of items is called an 'array'.
 
-The `bounceObserver` is set to observe when the first (in this case: the only) item in the `entries` array comes into the viewport (using `isIntersecting` on line 2).
+The `bounceObserver` is set to observe when the first (in this case, the only) item in the `entries` array comes into the viewport (using `isIntersecting` on line 2).
 
 When it does, the observer 'callback' outputs a message to the Console (line 3).
