@@ -1,16 +1,16 @@
-The `IntersectionObserver` is used to detect when an element (e.g. `<img>`, `<p>`, or `<div>`) enters or leaves the user's browser viewport.
+`IntersectionObserver` est utilisé pour détecter quand un élément (par exemple `<img>`, `<p>` ou `<div>`) entre ou quitte la fenêtre du navigateur de l'utilisateur.
 
-It is commonly used for lazy loading images and triggering animations.
+Il est couramment utilisé pour charger des images à chargement lent et déclencher des animations.
 
-The observer has three main parts:
+L'observateur comporte trois parties principales :
 
-**Target elements:** You specify which elements you want the observer to observe. These are the elements you're interested in knowing whether they have entered of exited the viewport.
+**Éléments cibles :** tu spécifies quels éléments tu veux que l'observateur obtienne. Ce sont les éléments qui t'intéressent pour savoir s'ils sont entrés ou non dans la fenêtre d'affichage.
 
-**Callback:** The callback is a function that is triggered if the observed element enters or exits the viewport. This could be an output to the Console, or a change to an HTML element, for example.
+**Callback :** la fonction callback (rappel) est une fonction qui est déclenchée si l'élément observé entre ou quitte la fenêtre d'affichage. Cela pourrait être une sortie vers la Console, ou un changement vers un élément HTML, par exemple.
 
-**Options:** You can also provide some options to the Intersection Observer, like setting a threshold. The threshold is a percentage of the observed element's visibility needed to trigger the callback. For example, you could use a threshold of 0.5 to be notified when an element is 50% visible, or a threshold of 1 to be notified when an element is fully visible.
+**Options :** tu peux également fournir quelques options à l'Intersection Observer, comme définir un threshold (seuil). Le seuil est un pourcentage de la visibilité de l'élément observé nécessaire pour déclencher le callback. Par exemple, tu peux utiliser un seuil de 0,5 pour être averti lorsqu'un élément est visible à 50 %, ou un seuil de 1 pour être averti lorsqu'un élément est entièrement visible.
 
-Here is an example of the use of `IntersectionObserver` from the [Animated story](https://projects.raspberrypi.org/en/projects/animated-story) project in the [More Web](https://projects.raspberrypi.org/en/raspberrypi/more-web) path:
+Voici un exemple d'utilisation d' `IntersectionObserver` du projet [Histoire animée](https://projects.raspberrypi.org/en/projects/animated-story) dans le parcours [Plus de web](https://projects.raspberrypi.org/en/raspberrypi/more-web) :
 
 ## --- code ---
 
@@ -23,17 +23,17 @@ line_highlights:
 
 const bounceObserver = new IntersectionObserver((entries) => {
 if (entries[0].isIntersecting) {
-console.log("BOUNCE TRIGGER IN VIEWPORT");
+console.log("BOUNCE TRIGGER DANS LA FENÊTRE D'AFFICHAGE");
 }
 });
 bounceObserver.observe(document.querySelector("#hideBounce"));
 
 \--- /code ---
 
-On line 1, `entries` is a collection of all elements on the web page with the `id="hideBounce"` attribute. These are the target elements, as specified in the observer call on line 6.
+À la ligne 1, `entries` est une collection de tous les éléments de la page web avec l'attribut `id="hideBounce"`. Ce sont les éléments cibles, comme indiqué dans l'appel de l'observateur à la ligne 6.
 
-A collection of items is called an 'array'.
+Une collection d'éléments est appelée un « tableau ».
 
-The `bounceObserver` is set to observe when the first (in this case: the only) item in the `entries` array comes into the viewport (using `isIntersecting` on line 2).
+Le `bounceObserver` est configuré pour observer lorsque le premier (dans ce cas : le seul) élément du tableau `entries` arrive dans la fenêtre d'affichage (en utilisant `isIntersecting` à la ligne 2).
 
-When it does, the observer 'callback' outputs a message to the Console (line 3).
+Lorsqu'il le fait, l'observateur 'callback' envoie un message à la console (ligne 3).
