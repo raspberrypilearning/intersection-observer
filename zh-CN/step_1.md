@@ -4,13 +4,13 @@
 
 观察器主要有三个部分：
 
-**目标元素**：你指定希望观察器观察的元素。 这些是你所感兴趣的元素，你想知道他们是否已经进入或者退出视口。
+**目标元素**：你指定希望观察器观察的元素。 这些是你所感兴趣的元素，你想知道他们是否已经进入或者退出视口。 这些是你所感兴趣的元素，你想知道他们是否已经进入或者退出视口。
 
 \*\*回调：\*\*回调是当观察元素进入或退出视口时触发的函数。 例如，该函数可以向控制台输出消息，或者更改 HTML 元素。
 
 \*\*选项：\*\*你还可以向交叉观察器提供一些选项，例如设置阈值。 阈值是需要可见才能触发回调的观察元素的数量。 例如，你可以使用阈值 0.5 在元素可见度为 50% 时发出通知，或者使用阈值 1 在元素完全可见时发出通知。
 
-以下是 [更多 Web](https://projects.raspberrypi.org/en/raspberrypi/more-web) 路径中的 [动画故事](https://projects.raspberrypi.org/en/projects/animated-story) 项目使用 `IntersectionObserver` 的示例：
+以下是 [更多 Web](https://projects.raspberrypi.org/zh-CN/raspberrypi/more-web) 路径中的 [动画故事](https://projects.raspberrypi.org/zh-CN/projects/animated-story) 项目使用 `IntersectionObserver` 的示例：
 
 ## --- code ---
 
@@ -30,7 +30,7 @@ bounceObserver.observe(document.querySelector("#hideBounce"));
 
 \--- /code ---
 
-在第 1 行中，`entries` 是网页上所有具有 `id="hideBounce"` 属性的元素的集合。 这些是目标元素，如第 6 行的观察器调用中所指定。
+在第 1 行中，`entries` 是网页上所有具有 `id="hideBounce"` 属性的元素的集合。 这些是目标元素，如第 6 行的观察器调用中所指定。 这些是目标元素，如第 6 行的观察器调用中所指定。
 
 项目的集合称为“数组”。
 
